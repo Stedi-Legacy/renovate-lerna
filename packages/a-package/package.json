@@ -1,0 +1,13 @@
+{
+  "name": "a-package",
+  "version": "0.0.0",
+  "description": "reproduction repo package",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stedi/renovate-lerna.git",
+    "directory": "packages/a-package"
+  },
+  "devDependencies": {
+    "constructs": "10.1.150"
+  }
+}
