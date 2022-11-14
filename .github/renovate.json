@@ -1,0 +1,50 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "stabilityDays": 21,
+  "internalChecksFilter": "strict",
+  "dependencyDashboard": true,
+  "transitiveRemediation": true,
+  "major": {
+    "automerge": true,
+    "dependencyDashboardApproval": true,
+    "addLabels": ["dependencies"]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "pinDigest",
+        "rollback",
+        "bump"
+      ],
+      "automerge": true,
+      "platformAutomerge": true,
+      "addLabels": ["dependencies"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "/^[~^]?0/",
+      "automerge": false,
+      "dependencyDashboardApproval": true,
+      "addLabels": ["major-upgrade"]
+    },
+
+    {
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitScope": "deps-dev"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitScope": "deps"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "/^[~^]?0/",
+      "automerge": true
+    }
+  ]
+}
