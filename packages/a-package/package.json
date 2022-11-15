@@ -8,6 +8,6 @@
     "directory": "packages/a-package"
   },
   "devDependencies": {
-    "constructs": "10.1.150"
+    "constructs": "10.1.160"
   }
 }
